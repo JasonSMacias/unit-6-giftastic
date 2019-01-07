@@ -3,7 +3,7 @@ $(document).ready(function() {
   var giphyApi = "BPXIt32b6aJqQBh3JzsEp3oaGeTjKYtW"
 
   // setting up giphy queryURL variable with beginning of url
-  var queryURL = "https://api.giphy.com/v1/gifs/";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=";
 
   $.ajax({
     url: queryURL,
