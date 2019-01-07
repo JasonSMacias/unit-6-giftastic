@@ -13,31 +13,51 @@
 
 <body>
   <div class="container-fluid">
-
     <div class="row">
-      <div class="col-12 col-md-5 col-ld-4 col-xl-3">
-        <button class="btn btn-dark btn-sm" type="submit">Darth Vader</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Princess Leia</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Luke Skywalker</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Obi-Wan Kenobi</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Han Solo</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">R2-D2</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">C-3PO</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Chewbacca</button>
-        <button class="btn btn-dark" type="submit">Grand Moff Tarkin</button>
-        <button class="btn btn-dark btn-sm" type="submit">Emperor Palpatine</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Yoda</button>
-        <button class="btn btn-secondary btn-sm" type="submit">Lando Calrissian</button>
-        <button class="btn btn-secondary btn-sm" type="submit">Boba Fett</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Wedge Antilles</button>
-        <button class="btn btn-secondary btn-sm" type="submit">Jabba the Hut</button>
-        <button class="btn btn-secondary btn-sm" type="submit">Wicket</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Mon Mothma</button>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Admiral Ackbar</button>
+      <div class="col-auto">
+        <div class="dropdown">
+          <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Star Wars Gifs
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="btn btn-dark btn-sm" type="submit">Darth Vader</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">Princess Leia</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">Luke Skywalker</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">Obi-Wan Kenobi</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">Han Solo</button>
+            <button class="btn btn-outline-dark btn-sm" type="submit">R2-D2</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">C-3PO</button>
+            <button class="btn btn-outline-dark btn-sm" type="submit">Chewbacca</button><br />
+            <button class="btn btn-dark" type="submit">Grand Moff Tarkin</button><br />
+            <button class="btn btn-dark btn-sm" type="submit">Emperor Palpatine</button><br />
+            <button class="btn btn-secondary btn-sm" type="submit">Lando Calrissian</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">Yoda</button>
+            <button class="btn btn-secondary btn-sm" type="submit">Boba Fett</button><br />
+            <button class="btn btn-secondary btn-sm" type="submit">Jabba the Hut</button><br />
+            <button class="btn btn-outline-dark btn-sm" type="submit">Admiral Ackbar</button><br />
+            <button class="btn btn-secondary btn-sm" type="submit">Wicket</button>
+            <div id="addedButtons"></div>
+          </div>
+        </div>
       </div>
-      <div class="col-12"></div>
-    </div>
+      <div class="col">
 
+      <div class="row justify-content-end">
+        <form class="form-inline">
+          <button type="submit" class="btn btn-outline-dark mb-2">Add a button</button>
+          
+          <input type="text" class="form-control" placeholder="Star Wars character" name="addbutton">
+        </form>
+      </div>
+
+      <div class="row">
+        <main id="gifs">
+
+        </main>
+      </div>
+      
+      </div>
+    </div>
   </div>
 
 
