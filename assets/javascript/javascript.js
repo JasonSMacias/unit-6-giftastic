@@ -12,6 +12,20 @@ $(document).ready(function() {
     $("#gifbuttons").append(`<button class="btn btn-outline-dark btn-sm gifbutton" type="button" data-character="${topics[i]}">${topics[i]}</button>`);
   };
 
+  // listen to form, add button
+  $("#submitbutton").on("click", function(event) {
+    event.preventDefault();
+    alert("submitted");
+    
+
+
+    // Start working here =======================================================   See activity 07
+    // topics.push(
+
+    // );
+
+  });
+
   // function for button clicks
   $(".gifbutton").click(function(){
     var character = $(this).attr("data-character");
