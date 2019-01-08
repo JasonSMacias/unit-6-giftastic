@@ -25,21 +25,24 @@ $(document).ready(function() {
 
       for (i=0; i< response.data.length; i++){
         console.log(response.data[i].images.fixed_width_still.url);
-        var characterImage = $("<img>").attr("class", "rounded").attr("class","m-2");
-        var rating = response.data[i].rating
+        var characterImage = $("<img>").attr("class", "rounded m-1");
+        var rating = response.data[i].rating;
+        var gifDiv = $("<div>").attr("class", "d-inline");
         console.log(rating);
-        var p = $("<p>").text("Rating: "+rating);
+        var p = $("<p>").text("Rating: "+rating).attr("class", "text-white d-inline");
         characterImage.attr("src", response.data[i].images.fixed_width_still.url);
-        $("#gifs").prepend(characterImage);
+        gifDiv.append(characterImage);
+        gifDiv.append(p);
+        $("#gifs").prepend(gifDiv);
       }
 
     });
 
-    // pause and play gifs
-      // $("img").click(
-      //   $(this).attr("src", response.data[i].images.fixed_width.url);
-      // );
     
   });
 
+  // pause and play gifs
+    $("img").on("click", function() {
+      $(this).attr("src", response.data[i].images.fixed_width.url);
+    });
 });
