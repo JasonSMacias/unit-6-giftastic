@@ -25,24 +25,33 @@ $(document).ready(function() {
 
       for (i=0; i< response.data.length; i++){
         console.log(response.data[i].images.fixed_width_still.url);
-        var characterImage = $("<img>").attr("class", "rounded m-1");
+        var characterImage = $("<img>").attr("class", "rounded m-1 gif").attr("data-state", "still");
         var rating = response.data[i].rating;
         var gifDiv = $("<div>").attr("class", "d-inline");
         console.log(rating);
         var p = $("<p>").text("Rating: "+rating).attr("class", "text-white d-inline");
-        characterImage.attr("src", response.data[i].images.fixed_width_still.url);
+        characterImage.attr("src", response.data[i].images.fixed_width_still.url).attr("data-still", response.data[i].images.fixed_width_still.url).attr("data-animate", response.data[i].images.fixed_width.url);
         gifDiv.append(characterImage);
         gifDiv.append(p);
         $("#gifs").prepend(gifDiv);
       }
 
+      // pause and play gifs
+      $(".gif").on("click", function() {
+        // variable to keep track of whether gif is still or animated
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
     });
 
     
   });
 
-  // pause and play gifs
-    $("img").on("click", function() {
-      $(this).attr("src", response.data[i].images.fixed_width.url);
-    });
+  
 });
