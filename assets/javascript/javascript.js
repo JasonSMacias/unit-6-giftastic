@@ -8,13 +8,14 @@ $(document).ready(function() {
   // setting up array with strings for buttons
   var topics = ["Darth Vader", "Princess Leia", "Luke Skywalker", "Obi-Wan Kenobi", "Han Solo", "R2-D2", "C-3PO", "Chewbacca", "Moff Tarkin", "Emperor Palpatine", "Lando Calrissian", "Yoda", "Boba Fett", "Jabba the Hutt", "Admiral Ackbar"];
 
+  // empty variable for button added by user
   var newButton ="";
 
   // setting up function to empty gifbuttons div and create buttons based on topics array.  Then calling it.
   function fillButtons() {
       $("#gifbuttons").empty();
     for (i=0; i < topics.length; i++){
-      $("#gifbuttons").append(`<button class="btn btn-outline-dark btn-sm gifbutton" type="button" data-character="${topics[i]}">${topics[i]}</button>`);
+      $("#gifbuttons").append(`<button class="btn btn-light btn-sm ml-1 gifbutton" type="button" data-character="${topics[i]}">${topics[i]}</button>`);
       
     };
     
@@ -35,7 +36,7 @@ $(document).ready(function() {
     console.log(topics);
     fillButtons();
     console.log(document.body);
-          // function for button clicks, had to duplicat here for it to work after  new buttons added, dont' know why.  Something with scoping maybe.  Not very DRY. Will try to fix later.
+          // function for button clicks, had to duplicate here for it to work after new buttons added.  Dont' know why.  Maybe a scoping issue.  Not very DRY. Will try to fix later.  Far indented whole thing so it's easier to pull out.
           $(".gifbutton").click(function(){
           var character = $(this).attr("data-character");
           queryURL = beginningURL+character+giphyApi;
@@ -48,11 +49,11 @@ $(document).ready(function() {
 
             for (i=0; i< response.data.length; i++){
               console.log(response.data[i].images.fixed_width_still.url);
-              var characterImage = $("<img>").attr("class", "rounded m-1 gif").attr("data-state", "still");
+              var characterImage = $("<img>").attr("class", "rounded border border-dark m-1 gif").attr("data-state", "still");
               var rating = response.data[i].rating;
               var gifDiv = $("<div>").attr("class", "d-inline");
               console.log(rating);
-              var p = $("<p>").text("Rating: "+rating).attr("class", "text-white d-inline");
+              var p = $("<p>").text("Rating: "+rating).attr("class", "d-inline");
               characterImage.attr("src", response.data[i].images.fixed_width_still.url).attr("data-still", response.data[i].images.fixed_width_still.url).attr("data-animate", response.data[i].images.fixed_width.url);
               gifDiv.append(characterImage);
               gifDiv.append(p);
@@ -93,11 +94,11 @@ $(document).ready(function() {
 
       for (i=0; i< response.data.length; i++){
         console.log(response.data[i].images.fixed_width_still.url);
-        var characterImage = $("<img>").attr("class", "rounded m-1 gif").attr("data-state", "still");
+        var characterImage = $("<img>").attr("class", "rounded border border-dark m-1 gif").attr("data-state", "still");
         var rating = response.data[i].rating;
         var gifDiv = $("<div>").attr("class", "d-inline");
         console.log(rating);
-        var p = $("<p>").text("Rating: "+rating).attr("class", "text-white d-inline");
+        var p = $("<p>").text("Rating: "+rating).attr("class", "d-inline");
         characterImage.attr("src", response.data[i].images.fixed_width_still.url).attr("data-still", response.data[i].images.fixed_width_still.url).attr("data-animate", response.data[i].images.fixed_width.url);
         gifDiv.append(characterImage);
         gifDiv.append(p);

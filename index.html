@@ -15,10 +15,11 @@
 <body>
   <div class="container-fluid">
 
+    <!-- Dropdown buttons -->
     <div class="row">
-      <div class="col-auto">
+      <div class="col-auto mt-2">
         <div class="dropdown">
-          <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Star Wars Gifs
           </button>
 
@@ -28,23 +29,24 @@
       </div>
       <div class="col">
 
+        <!-- form to submit new button -->
         <div class="row">
-          <div class="col justify-content-left">
+          <div class="col justify-content-left mt-2">
             <form class="form-inline">
-              <button id="submitbutton" class="btn btn-outline-dark mb-2">Add a button</button>
+              <button id="submitbutton" class="btn btn-outline-light mb-2">Add a button</button>
               
-              <input type="text" class="form-control" placeholder="Star Wars character" id="addbutton">
+              <input type="text" class="form-control ml-1" placeholder="Star Wars character" id="addbutton">
             </form>
           </div>
 
-          <div class="col justify-content-end">
-            <h1 class="d-inline h5">May the <em>GIF</em> be with you!</h1>
+          <div class="col justify-content-end mt-3">
+            <h1 class="d-inline h4">May the <em>GIF</em> be with you!</h1>
           </div>
         </div>
 
         <div class="row">
           <main class="text-center m-2 rounded" id="gifs">
-
+            <!-- js inserts GIFs here -->
           </main>
         </div>
       

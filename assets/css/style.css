@@ -1,6 +1,13 @@
+/* old school Star Wars colors */
 body {
   font-family: 'Poller One', cursive;
+  background-color: #442f11;
+  color: #5f9fdd;
+}
+em {
+  color: #c38348;
 }
 #gifs {
-  background-color: black;
+  background-color: #fbfffe;
+  color: #9e5960;
 }
