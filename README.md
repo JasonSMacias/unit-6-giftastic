@@ -4,6 +4,8 @@
 ##Unit 6 Giphy API homework
 Using [Giphy API](https://developers.giphy.com/) to bring old school *Star Wars* characters to life.
 
+### See the delployed page here:  http://jasonsmacias.github.io/unit-6-giftastic
+
 With it you can:
 * Click buttons from a list to bring up Giphy images.
 * Click images to start up the animation, and click again to stop it.
